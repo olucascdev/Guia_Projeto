@@ -15,8 +15,8 @@ export default function GoogleMapView() {
             setmapRegion({
                 latitude: location.coords.latitude,
                 longitude: location.coords.longitude,
-                latitudeDelta: 0.0322,
-                longitudeDelta: 0.0421,
+                latitudeDelta: 0.00222,
+                longitudeDelta: 0.0121,
             })
         }
       },[location])
@@ -36,6 +36,7 @@ export default function GoogleMapView() {
                 }}
                 provider={PROVIDER_GOOGLE}
                 showsUserLocation={true}
+                region={mapRegion}
                 ></MapView>
         </View>            
 

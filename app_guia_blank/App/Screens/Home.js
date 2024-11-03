@@ -1,15 +1,34 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Header from '../Components/Home/Header';
 import GoogleMapView from '../Components/Home/GoogleMapView';
+import CategoryList from '../Components/Home/CategoryList';
+import GlobalApi from '../Services/GlobalApi';
+import PlaceList from '../Components/Home/PlaceList';
+import { ScrollView } from 'react-native'
 
 
 export default function Home() {
+  
+  const [placeList,setPlaceList]=useState([]);
+  
+  
+  useEffect(()=>{
+    GetNearBySearchPlace();
+  },[])
+
+  const GetNearBySearchPlace=()=>{
+    GlobalApi.nearByPlace().then(resp=>{
+      setPlaceList(resp.data.results);
+  })
+  }
   return (
-    <View style={{paddingTop:40,backgroundColor:'#fff',flex:1
+    <ScrollView style={{paddingTop:40,backgroundColor:'#fff',flex:1
     }}>
       <Header/>
       <GoogleMapView/>
-    </View>
+      <CategoryList/>
+      {placeList? <PlaceList placeList={placeList} />:null}
+    </ScrollView>
   )
 }

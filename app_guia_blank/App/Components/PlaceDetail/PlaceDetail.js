@@ -61,7 +61,7 @@ export default function PlaceDetail() {
             color: Colors.WHITE,
           }}
         >
-          Get Direction on Google Map
+          Obtenha direção no Google Map
         </Text>
       </TouchableOpacity>
     </ScrollView>

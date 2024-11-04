@@ -1,3 +1,7 @@
-
+App/Services/GlobalApi.js
+App/Components/PlaceDetailItem.js
+App/Components/BusinessItem.js
+App/Components/PlaceItemBig.js
+App/Components/PlaceItem.js
 app_guia_blank/app.json
 /app_guia_blank

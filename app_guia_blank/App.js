@@ -8,8 +8,6 @@ import { useFonts } from 'expo-font';
 import { UserLocationContext } from './App/Context/UserLocationContext';
 import Colors from './App/Shared/Colors';
 import { ActivityIndicator } from 'react-native';
-
-
 export default function App() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
@@ -18,6 +16,8 @@ export default function App() {
     'raleway-bold': require('./assets/Fonts/Raleway-SemiBold.ttf'),
 
   });
+   
+   
   useEffect(() => {
     (async () => {
       
@@ -29,25 +29,27 @@ export default function App() {
 
       let location = await Location.getCurrentPositionAsync({});
       setLocation(location);
-      
+     
     })();
+
+    
   }, []);
   return (
     <View style={styles.container}>
-         <UserLocationContext.Provider 
-          value={{location,setLocation}}>
+    <UserLocationContext.Provider 
+    value={{location,setLocation}}>
         <NavigationContainer>
           <TabNavigation/>
         </NavigationContainer>
       </UserLocationContext.Provider>
-    </View>
+    </View> 
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-  
+    backgroundColor: Colors.WHITE,
+    paddingTop:20
   },
 });

@@ -2,12 +2,13 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Screens/Home';
-import Fav from '../Screens/Fav';
+import Gemini from '../Screens/Gemini';
 import Search from '../Screens/Search';
 import Profile from '../Screens/Profile';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import HomeNavigation from './HomeNavigation';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 export default function TabNavigation() {
     const Tab = createBottomTabNavigator();
@@ -29,11 +30,11 @@ export default function TabNavigation() {
           <Ionicons name="search" color={color} size={size} />
         ),
       }} />
-      <Tab.Screen name="Fav" component={Fav}
+      <Tab.Screen name="Gemini" component={Gemini}
        options={{
-        tabBarLabel: 'Fav',
+        tabBarLabel: 'Gemini',
         tabBarIcon: ({ color, size }) => (
-            <FontAwesome name="heart" size={size} color={color} />
+          <MaterialCommunityIcons name="robot-happy-outline" size={size} color={color} />
         ),
       }} />
       <Tab.Screen name="Profile" component={Profile} 

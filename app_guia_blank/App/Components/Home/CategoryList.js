@@ -7,20 +7,20 @@ export default function CategoryList({setSelectedCategory}) {
   const categoryList=[
     {
         id:1,
-        name:'Pontos Turisticos',
-        value:'Pontos Turisticos',
+        name:'Gas Station',
+        value:'Gas Station',
         icon:require('./../../../assets/gas.png')
     },
     {
         id:2,
-        name:'Restaurantes',
-        value:'restaurant',
+        name:'Restaurants',
+        value:'Restaurants',
         icon:require('./../../../assets/food.png')
     },
     {
         id:3,
-        name:'Hoteis',
-        value:'Hoteis',
+        name:'Coffe',
+        value:'Coffe',
         icon:require('./../../../assets/cafe.png')
     },
 ]

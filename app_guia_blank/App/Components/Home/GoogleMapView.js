@@ -5,7 +5,7 @@ import { UserLocationContext } from "../../Context/UserLocationContext";
 import PlaceMarker from "./PlaceMarker";
 import Colors from "../../Shared/Colors";
 
-export default function GoogleMapView() {
+export default function GoogleMapView({placeList}) {
     const { location, setLocation } = useContext(UserLocationContext);
     const [mapRegion, setmapRegion] = useState({});
 
@@ -45,12 +45,12 @@ export default function GoogleMapView() {
                     {mapRegion.latitude && (
                         <Marker
                             title="You"
-                            coordinate={{
-                                latitude: mapRegion.latitude,
-                                longitude: mapRegion.longitude,
-                            }}
+                            coordinate={mapRegion}
                         />
                     )}
+                    {placeList.map((item,index)=>index<=5&&(
+                        <PlaceMarker item={item}/>
+                    ))}
                 </MapView>
             </View>
         </View>

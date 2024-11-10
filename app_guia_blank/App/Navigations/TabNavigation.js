@@ -2,9 +2,9 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Screens/Home';
-import Gemini from '../Screens/Gemini';
 import Search from '../Screens/Search';
 import Profile from '../Screens/Profile';
+import ChatGpt from '../Screens/ChatGpt';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import HomeNavigation from './HomeNavigation';
@@ -30,13 +30,14 @@ export default function TabNavigation() {
           <Ionicons name="search" color={color} size={size} />
         ),
       }} />
-      <Tab.Screen name="Gemini" component={Gemini}
+      <Tab.Screen name="ChatGpt" component={ChatGpt} 
        options={{
-        tabBarLabel: 'Gemini',
+        tabBarLabel: 'Chatbot',
         tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="robot-happy-outline" size={size} color={color} />
+          
+          <FontAwesome name="user-circle-o" color={color} size={size} />
         ),
-      }} />
+      }}/>
       <Tab.Screen name="Profile" component={Profile} 
        options={{
         tabBarLabel: 'Profile',

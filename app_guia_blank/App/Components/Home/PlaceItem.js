@@ -3,7 +3,13 @@ import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 import Colors from "../../Shared/Colors";
 import HorizontalLine from "./HorizontalLine";
+
 export default function PlaceItem({ place }) {
+  // Verifica se a foto existe e cria a URL ou define como null se não houver
+  const imageUri = place?.photos?.[0]?.photo_reference
+    ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${place?.photos[0]?.photo_reference}&key=AIzaSyDPOgAcCAav-ky6eEZVgrSk_c8t0ORGvco`
+    : null;
+
   return (
     <View
       style={{
@@ -11,34 +17,41 @@ export default function PlaceItem({ place }) {
         flexDirection: "row",
         alignItems: "center",
         gap: 15,
-        marginTop:20
+        marginTop: 20,
       }}
     >
-    {place?.photos?  <Image
-        source={{uri:
-          "https://maps.googleapis.com/maps/api/place/photo" +
-          "?maxwidth=400" +
-          "&photo_reference=" +
-          place?.photos[0]?.photo_reference +
-          "&key=AIzaSyDPOgAcCAav-ky6eEZVgrSk_c8t0ORGvco",
-        }}
-        style={{ width: 110, height: 110, borderRadius: 15 }}
-      />:
-      <Image source={require('./../../../assets/placeholder.jpg')}
-      style={{ width: 110, height: 110, borderRadius: 15 }}
-      />}
-      <View style={{flex:1}}>
+      {/* Exibe a imagem se existir, caso contrário, exibe a imagem de fallback */}
+      {imageUri ? (
+        <Image
+          source={{ uri: imageUri }}
+          style={{ width: 110, height: 110, borderRadius: 15 }}
+        />
+      ) : (
+        <Image
+          source={require("./../../../assets/placeholder.jpg")} // Caminho da imagem de fallback
+          style={{ width: 110, height: 110, borderRadius: 15 }}
+        />
+      )}
+
+      <View style={{ flex: 1 }}>
         <Text
           numberOfLines={2}
-          style={{ fontSize: 18, marginBottom: 5, 
-            fontFamily: "raleway-bold" }}
+          style={{
+            fontSize: 18,
+            marginBottom: 5,
+            fontFamily: "raleway-bold",
+          }}
         >
           {place.name}
         </Text>
-        <Text style={{ fontSize: 16, 
-        marginBottom: 5,
-      color:Colors.DARK_GRAY }} 
-        numberOfLines={2}>
+        <Text
+          style={{
+            fontSize: 16,
+            marginBottom: 5,
+            color: Colors.DARK_GRAY,
+          }}
+          numberOfLines={2}
+        >
           {place.vicinity}
         </Text>
         <View
@@ -52,10 +65,9 @@ export default function PlaceItem({ place }) {
           <AntDesign name="star" size={20} color={Colors.YELLOW} />
           <Text>{place.rating}</Text>
         </View>
-
       </View>
-      <HorizontalLine/>
 
+      <HorizontalLine />
     </View>
   );
 }

@@ -7,7 +7,7 @@ import HorizontalLine from "./HorizontalLine";
 export default function PlaceItem({ place }) {
   // Verifica se a foto existe e cria a URL ou define como null se não houver
   const imageUri = place?.photos?.[0]?.photo_reference
-    ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${place?.photos[0]?.photo_reference}&key=AIzaSyDPOgAcCAav-ky6eEZVgrSk_c8t0ORGvco`
+    ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${place?.photos[0]?.photo_reference}&key=AIzaSyC8TiHpintrDnne4odCeIw2SJVK57TGtv8`
     : null;
 
   return (

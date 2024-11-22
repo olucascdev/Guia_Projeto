@@ -7,7 +7,7 @@ export default function BusinessItem({ place }) {
   // Verificação se place e place.photos[0] existem antes de tentar usá-los
   const photoReference = place?.photos?.[0]?.photo_reference;
   const imageUri = photoReference
-    ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photoReference}&key=AIzaSyDPOgAcCAav-ky6eEZVgrSk_c8t0ORGvco`
+    ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photoReference}&key=AIzaSyC8TiHpintrDnne4odCeIw2SJVK57TGtv8`
     : null;
 
   return (

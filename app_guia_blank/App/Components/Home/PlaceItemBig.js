@@ -7,7 +7,7 @@ import HorizontalLine from "./HorizontalLine";
 export default function PlaceItemBig({ place }) {
   // Verificação da foto
   const imageUri = place?.photos?.[0]?.photo_reference
-    ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${place?.photos[0]?.photo_reference}&key=AIzaSyDPOgAcCAav-ky6eEZVgrSk_c8t0ORGvco`
+    ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${place?.photos[0]?.photo_reference}&key=AIzaSyC8TiHpintrDnne4odCeIw2SJVK57TGtv8`
     : null;
 
   return (

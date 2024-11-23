@@ -29,6 +29,13 @@ export default function TabNavigation() {
           <Ionicons name="search" color={color} size={size} />
         ),
       }} />
+      <Tab.Screen name="Ia" component={Ia}
+       options={{
+        tabBarLabel: 'Ia',
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons name="search" color={color} size={size} />
+        ),
+      }} />
 
       <Tab.Screen name="Profile" component={Profile} 
        options={{

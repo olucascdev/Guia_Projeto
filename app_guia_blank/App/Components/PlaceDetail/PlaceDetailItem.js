@@ -11,7 +11,7 @@ export default function PlaceDetailItem({ place, onDirectionClick }) {
   // Verificação da foto
   const photoReference = place?.photos?.[0]?.photo_reference;
   const imageUri = photoReference
-    ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photoReference}&key=AIzaSyC8TiHpintrDnne4odCeIw2SJVK57TGtv8`
+    ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photoReference}&key=AIzaSyDPOgAcCAav-ky6eEZVgrSk_c8t0ORGvco`
     : null;
 
   return (

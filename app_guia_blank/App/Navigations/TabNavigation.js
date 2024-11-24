@@ -2,12 +2,14 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Screens/Home';
+import Gemini from '../Screens/Gemini';
 import Search from '../Screens/Search';
 import Profile from '../Screens/Profile';
 import { Ionicons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import HomeNavigation from './HomeNavigation';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 
 export default function TabNavigation() {
     const Tab = createBottomTabNavigator();
@@ -29,11 +31,12 @@ export default function TabNavigation() {
           <Ionicons name="search" color={color} size={size} />
         ),
       }} />
-      <Tab.Screen name="Ia" component={Gemini}
+      <Tab.Screen name="Robot" component={Gemini}
        options={{
-        tabBarLabel: 'Ia',
+        tabBarLabel: 'Robot',
         tabBarIcon: ({ color, size }) => (
-          <Ionicons name="search" color={color} size={size} />
+          <MaterialCommunityIcons name="robot" size={size} color={color} />
+
         ),
       }} />
 

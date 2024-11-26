@@ -8,6 +8,8 @@ import { useFonts } from 'expo-font';
 import { UserLocationContext } from './App/Context/UserLocationContext';
 import Colors from './App/Shared/Colors';
 import { ActivityIndicator } from 'react-native';
+import { GeminiChat } from './App/Screens/Gemini'
+ 
 export default function App() {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);

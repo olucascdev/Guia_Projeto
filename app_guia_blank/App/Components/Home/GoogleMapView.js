@@ -27,12 +27,12 @@ export default function GoogleMapView({placeList}) {
     <View style={{ marginTop: 20 }}>
       <Text style={{ fontSize: 20, 
         marginBottom: 10, fontWeight: "600",fontFamily:'raleway-bold' }}>
-        Top Near By Places
+        Principais lugares próximos
       </Text>
       <View style={{ borderRadius: 20, overflow: "hidden" }}>
     {location?    <MapView
           style={{
-            width: Dimensions.get("screen").width * 0.89,
+            width: Dimensions.get("screen").width * 0.98,
             height: Dimensions.get("screen").height * 0.23,
           }}
           provider={PROVIDER_GOOGLE}
